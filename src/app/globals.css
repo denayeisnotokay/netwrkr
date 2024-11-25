@@ -2,20 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  h1 {
+    @apply font-heading;
+    @apply font-light;
+    @apply text-3xl;
+    @apply md:text-4xl;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h2 {
+    @apply font-heading;
+    @apply font-light;
+    @apply text-2xl;
+    @apply md:text-3xl;
+  }
+
+  h3 {
+    @apply font-heading;
+    @apply font-light;
+    @apply text-xl;
+    @apply md:text-2xl;
+  }
+
+  h4 {
+    @apply font-heading;
+    @apply font-light;
+    @apply text-lg;
+    @apply md:text-xl;
+  }
+
+  h5 {
+    @apply font-heading;
+    @apply font-light;
+  }
+
+  h6 {
+    @apply font-bold;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.filepond--panel-root {
+  @apply bg-default-800 !important;
+}
+
+.filepond--drop-label {
+  @apply text-foreground !important;
 }
